@@ -1,5 +1,29 @@
 {
   plugins = {
+    indent-blankline.enable = true;
+    tmux-navigator.enable = true;
+    # one day we may move to zellij
+    # zellij = {
+    #   enable = true;
+    #   settings = {
+    #     replaceVimWindowNavigationKeybinds = true;
+    #     vimTmuxNavigatorKeybinds = false;
+    #   };
+    # };
+
+    bufferline = {
+      # TODO: remove this once you are used to not having it
+      enable = true;
+      settings = {
+        options = {
+          mode = "tabs";
+          always_show_bufferline = true;
+          buffer_close_icon = "x";
+          # buffer_close_icon = "";
+          diagnostics = "nvim_lsp";
+        };
+      };
+    };
     gitsigns = {
       enable = true;
       # settings = {
@@ -25,11 +49,17 @@
 
     lualine = {
       enable = true;
-      settings.options.globalstatus = true;
+      settings = {
+        options.globalstatus = true;
+        sections = {
+          lualine_c = [
+            "navic"
+          ];
+        };
+      };
     };
 
-    cmp_luasnip.enable = true;
-    # luasnip.enable = true;
+    luasnip.enable = true;
 
     mini = {
       enable = true;
@@ -41,11 +71,12 @@
     # noice.enable = true;
     # notify.enable = true;
     # nvim-autopairs.enable = true;
-    # nvim-colorizer.enable = true;
+    nvim-colorizer.enable = true;
 
     render-markdown.enable = true;
     todo-comments.enable = true;
 
+    # treesitter-context.enable = true; # mor in the way than anything
     treesitter = {
       enable = true;
       folding = false;
@@ -56,4 +87,3 @@
     web-devicons.enable = true;
   };
 }
-

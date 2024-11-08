@@ -26,7 +26,9 @@
         baseNixvimModule = {
           inherit pkgs;
           module = {pkgs, ...}: {
-            imports = [./config];
+            imports = [
+              ./config
+            ];
             extraPackages = with pkgs; [sops];
           };
           extraSpecialArgs = {};

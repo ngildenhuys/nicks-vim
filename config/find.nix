@@ -3,6 +3,10 @@
     fzf-lua = {
       enable = true;
       keymaps = {
+        "<leader>ff" = {
+          action = "files";
+          options.desc = "Live fd";
+        };
         "<leader>fw" = {
           action = "live_grep";
           options.desc = "Live Grep";
@@ -23,27 +27,20 @@
     };
 
     # TODO : maybe get rid of this in favor of fzf lua
-    telescope = {
-      enable = true;
-      keymaps = {
-        "<leader>ff" = {
-          action = "find_files";
-          options = {
-            desc = "Telescope Find Files";
-          };
-        };
-      };
-    };
+    # telescope = {
+    #   enable = true;
+    #   keymaps = {
+    #     "<leader>ff" = {
+    #       action = "find_files";
+    #       options = {
+    #         desc = "Telescope Find Files";
+    #       };
+    #     };
+    #   };
+    # };
 
     todo-comments = {
       enable = true;
-      keymaps = {
-        todoTelescope = {
-          key = "<leader>ct";
-          keywords = ["TODO"];
-        };
-      };
     };
   };
 }
-
